@@ -1,0 +1,29 @@
+{
+  "name": "github-issue-metadata-action",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:get-metadata": "ncc build lib/actions/get-metadata.js -o dist/get-metadata --source-map",
+    "build:set-metadata": "ncc build lib/actions/set-metadata.js -o dist/set-metadata --source-map",
+    "build:actions": "npm run build && npm run build:get-metadata && npm run build:set-metadata",
+    "test": "vitest --run"
+  },
+  "keywords": [],
+  "author": "peter-murray",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@octokit/core": "^6.1.2",
+    "@octokit/rest": "^21.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vercel/ncc": "^0.38.1",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
+}

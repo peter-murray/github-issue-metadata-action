@@ -1,0 +1,35 @@
+name: Set metadata on a GitHub issue
+description: Sets the metadata that is embedded in a GitHub issue.
+author: Peter Murray
+
+inputs:
+  github_token:
+    description: The GitHub token to use to access the issue
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: The repository that hosts the issue
+    default: ${{ github.repository }}
+    required: true
+
+  issue_number:
+    description: The issue number to extract metadata from
+    required: true
+
+  metadata_marker:
+    description: The metadata mkey marker to extract from the issue
+    default: bootstrap
+    required: true
+
+  metadata_value:
+    description: The string to set as the metadata in the metadata contents in the issue body
+    required: true
+
+  github_api_url:
+    description: The GitHub instance API URL, defaults to the actions runner environment
+    default: ${{ github.api_url }}
+
+runs:
+  using: node20
+  main: '../dist/set-metadata/index.js'

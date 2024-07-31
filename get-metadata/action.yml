@@ -1,0 +1,42 @@
+name: Get metadata from a GitHub issue
+description: Extracts metadata that is embedded in GitHub issue.
+author: Peter Murray
+
+inputs:
+  github_token:
+    description: The GitHub token to use to access the issue
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: The repository that hosts the issue
+    default: ${{ github.repository }}
+    required: true
+
+  issue_number:
+    description: The issue number to extract metadata from
+    required: true
+
+  metadata_marker:
+    description: The metadata mkey marker to extract from the issue
+    default: bootstrap
+    required: true
+
+  metadata_parse_json_payload:
+    description: |
+      A flag to indicate if the metadata value is a JSON payload
+      and the values should be parsed and provided as outputs under the key names in the JSON data
+    default: false
+
+  github_api_url:
+    description: The GitHub instance API URL, defaults to the actions runner environment
+    default: ${{ github.api_url }}
+
+  outputs:
+    metadata_value:
+      description: The value of the metadata key
+      required: true
+
+runs:
+  using: node20
+  main: '../dist/get-metadata/index.js'

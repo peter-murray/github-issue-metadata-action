@@ -1,0 +1,32 @@
+{
+    "debug.onTaskErrors": "showErrors",
+    "files.trimTrailingWhitespace": true,
+
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
+
+    "[javascript]": {
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.tabSize": 2
+    },
+    "[yaml]": {
+      "editor.tabSize": 2
+    },
+    "[html]": {
+      "editor.tabSize": 2
+    },
+    "[xml]": {
+      "editor.tabSize": 4
+    },
+
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "workbench.colorTheme": "GitHub Dark Dimmed"
+  }
