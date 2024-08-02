@@ -48,7 +48,7 @@ async function exec() {
 
           Object.keys(parsed).forEach((key) => {
             const keyName = `metadata_value_${key}`;
-            const keyValueString = JSON.stringify(parsed[key]);
+            const keyValueString = parsed[key];
             core.info(`Setting output '${keyName}' to '${keyValueString}'`);
             core.setOutput(keyName, keyValueString);
           });

@@ -30360,7 +30360,7 @@ async function exec() {
                     const parsed = JSON.parse(rawMetadata);
                     Object.keys(parsed).forEach((key) => {
                         const keyName = `metadata_value_${key}`;
-                        const keyValueString = JSON.stringify(parsed[key]);
+                        const keyValueString = parsed[key];
                         lib_core.info(`Setting output '${keyName}' to '${keyValueString}'`);
                         lib_core.setOutput(keyName, keyValueString);
                     });
